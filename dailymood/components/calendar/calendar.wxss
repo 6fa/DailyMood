@@ -1,0 +1,48 @@
+/* components/calendar/calendar.wxss */
+@import "/iconfont/iconfont.wxss";
+.calendar-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar-item {
+  width: 14.28%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-date {
+  font-size: 26rpx;
+  width: 50%;
+  height: 40rpx;
+  border-radius: 50%;
+  color: rgb(255, 166, 0);
+}
+.calendar-date.today {
+  background-color: yellow;
+}
+.calendar-mood {
+  color: lightgrey;
+}
+.iconfont {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.iconfont.mood-0 {
+  color: red;
+}
+.iconfont.mood-1 {
+  color: lightcoral;
+}
+.iconfont.mood-2 {
+  color: rgb(255, 230, 184);
+}
+.iconfont.mood-3 {
+  color: lightblue;
+}
+
+.iconfont.mood-4 {
+  color: blue;
+}

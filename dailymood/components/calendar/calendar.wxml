@@ -1,0 +1,18 @@
+<!--components/calendar/calendar.wxml-->
+<view class="calendar-container">
+  <!-- 日期前面空出来的格子 -->
+  <view wx:for="{{dayIndexArray}}" class="calendar-item"></view>
+  <!-- 日期 -->
+  <view wx:for="{{daysArray}}" class="calendar-item">
+    <view 
+      class="{{item == date && thisMonth == month && thisYear == year?'calendar-date today':'calendar-date'}}"  
+      bind:tap="toEdit" 
+      data-moodinfo="{{monthMoodList[index]}}"
+    >
+      {{item}}
+    </view>
+    <view class="calendar-mood">
+      <i class="iconfont icon-icon-test mood-{{monthMoodList[index].moodType || monthMoodList[index].moodType == 0?monthMoodList[index].moodType:''}}"></i>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/edit/edit.wxml-->
+<view class="edit-container">
+  <view class="image-container">
+    <image class="image-item" src="/images/rainbow.png"></image>
+    <image class="image-item" src="/images/sun.png"></image>
+    <image class="image-item" src="/images/sun.png"></image>
+    <image class="image-item" src="/images/sun.png"></image>
+    <image class="image-item" src="/images/sun.png"></image>
+    <image class="image-item" src="/images/rainbow.png"></image>
+  </view>
+
+  <text class="title">点击选择今日心情</text>
+  <text class="title-date">--{{time}}--</text>
+  <!-- 心情类型列表 -->
+  <view class="type-of-mood">
+    <view 
+      class="mood-list-item {{clickItemIndex==index?'active':''}}" 
+      wx:for="{{moodArr}}"
+      data-num="{{index}}"
+      bindtap="clickMood"
+    >
+      <text class="mood-color color-{{index}} iconfont icon-icon-test"></text>
+      <text class="mood-text">{{item}}</text>
+      <text class="mood-score">{{scoreArr[index]}}分</text>
+    </view>
+  </view>
+
+  <!-- 文字记录框 -->
+  <form bindsubmit="customConfirm">
+    <view class="message">
+      <textarea 
+        placeholder="可以写下现在的心情哦(可输入120个字符)" 
+        class="text-edit" 
+        maxlength="120"
+        name="textarea"
+        value="{{inputVal}}"
+      >
+      </textarea>
+    </view>
+
+    <button class="confirm" form-type="submit">{{buttonMsg}}</button>
+  </form>
+  
+
+  <text class="end-text">-----Be Happy-----</text>
+</view>

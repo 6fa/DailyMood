@@ -1,0 +1,45 @@
+<!--dailymood/pages/home/home.wxml-->
+
+<view class="container">
+  <!-- 标题 -->
+  <view class="title">
+    <image src="/images/rainbow.png" class="title-img"></image>
+    <text class="title-text">Daily Mood</text>
+    <text class="title-subtext">--点击日期开始记录--</text>
+  </view>
+
+  <!-- 今日日期显示/日期切换 -->
+  <view class="switchDate">
+    <image class="prev" src="/images/arrow.png" bindtap="toPrevMonth"></image>
+    <!-- 日期点击可以具体选择日期 -->
+    <view class="today" bindtap="chooseDate">
+      <text class="today-year">{{time.nowYear}}</text>
+      <text class="today-month">{{time.nowMonth+1}}</text>
+    </view>
+    <image class="next" src="/images/arrow.png" bindtap="toNextMonth"></image>
+  </view>
+
+  <!-- 日期选择盒 -->
+  <view class="choose-date" wx:if="{{showTimePicker}}">
+    <picker-view 
+      class="choose-date-box"
+      value="{{value}}" 
+      bindchange="bindChanges"
+    >
+      <picker-view-column>
+        <view wx:for="{{years}}">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{months}}">{{item}}月</view>
+      </picker-view-column>
+    </picker-view>
+    <text class="confirm-choice" bindtap="toConfirm">确定</text>
+  </view>
+  <!-- 星期 -->
+  <view class="week">
+    <text class="week-item" wx:for="{{weekArr}}" wx:for-item="week">{{week}}</text>
+  </view>
+
+  <!-- 日历主体 -->
+  <calendar year="{{time.nowYear}}" month="{{time.nowMonth}}" date="{{time.nowDate}}"></calendar>
+</view>

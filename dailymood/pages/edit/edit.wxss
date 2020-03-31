@@ -1,0 +1,95 @@
+/* pages/edit/edit.wxss */
+@import "/iconfont/iconfont.wxss";
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 图片 */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40rpx 0;
+}
+.image-item {
+  width: 100rpx;
+  height: 100rpx;
+}
+/* 标题 */
+.title {
+  color: rgb(255, 166, 0);
+  font-size: 40rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.title-date {
+  color: rgb(0, 211, 70);
+  font-size: 35rpx;
+  margin: 30rpx 0;
+}
+/* 心情 */
+.type-of-mood {
+  color: rgb(255, 166, 0);
+  font-size: 35rpx;
+  width: 500rpx;
+}
+.mood-list-item {
+  height: 110rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed pink;
+}
+.mood-list-item.active {
+  background-color: lightyellow;
+}
+.mood-color {
+  font-size: 60rpx;
+  padding-right: 50rpx;
+}
+.color-0 {
+  color: red;
+}
+.color-1 {
+  color: lightcoral;
+}
+.color-2 {
+  color: rgb(255, 230, 184);
+}
+.color-3 {
+  color: lightblue;
+}
+.color-4 {
+  color: blue;
+}
+.mood-text {
+  padding-right: 50rpx;
+}
+
+/* 输入框 */
+.text-edit {
+  margin: 30rpx 0;
+  padding: 15rpx;
+  border: 1px dashed rgb(255, 166, 0);
+  width: 600rpx;
+  height: 300rpx;
+  font-size: 32rpx;
+}
+/* 确认提交 */
+.confirm {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: rgb(255, 255, 138);
+  font-size: 32rpx;
+  color: rgb(255, 131, 131);
+}
+
+.end-text {
+  color: rgb(255, 166, 0);
+  font-size: 30rpx;
+  padding: 50rpx 0;
+}

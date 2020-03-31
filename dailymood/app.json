@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/report/report",
+    "pages/edit/edit"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFA296"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "Home",
+        "iconPath": "images/cloud.png",
+        "selectedIconPath": "images/sun.png"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "Report",
+        "iconPath": "images/cloud.png",
+        "selectedIconPath": "images/sun.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

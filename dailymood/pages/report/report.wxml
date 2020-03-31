@@ -1,0 +1,116 @@
+<!--pages/report/report.wxml-->
+<view class="report-container">
+  <view class="title">
+    <image class="title-img" src="/images/report-icon.png"></image>
+    <text class="title-text">{{username}}的心情报告</text>
+  </view>
+
+  <!-- 按年份查看 -->
+  <view class="year-picker-container">
+    <!-- 点击年份出现选择器 -->
+    <text>----------</text>
+    <picker 
+      class="this-year"
+      mode="date" 
+      value="{{thisYear}}" 
+      fields="year" 
+      start="{{startYear}}"
+      end="{{endYear}}"
+      bindchange="yearChange"
+    >
+      <text>{{thisYear}}</text>
+    </picker>
+    <view class="arrow-img-container">
+      <image src="/images/arrow.png" class="arrow-img arrow-img-up"></image>
+      <image src="/images/arrow.png" class="arrow-img arrow-img-down"></image>
+    </view>
+    <text>----------</text>
+  </view>
+
+  <!-- 加载中图标 -->
+  <view class="loading" wx-if="{{isLoading}}">
+    <image src="/images/cloud.png" class="loading-img"></image>
+    <text class="loading-text">加载中......</text>
+  </view>
+
+
+  <!-- 概括结果 -->
+  <view class="general-res" wx-if="{{!noRecord}}">
+    <view class="general-res-item">
+      <image src="/images/flower.png" class="general-res-img"></image>
+      <view class="general-res-info">全年得分
+        <text class="general-res-infoNum">{{generalRes.totalScore}}</text>
+      分~</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/fruit.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共记录心情
+        <text class="general-res-infoNum">{{generalRes.recordNum}}</text>
+      条</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/flower.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共
+        <text class="general-res-infoNum">{{generalRes.moodType_1}}</text>
+      天心情非常棒！</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/fruit.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共
+        <text class="general-res-infoNum">{{generalRes.moodType_2}}</text>
+      天心情不错哦！</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/flower.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共
+        <text class="general-res-infoNum">{{generalRes.moodType_3}}</text>
+      天心情一般般</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/fruit.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共
+        <text class="general-res-infoNum">{{generalRes.moodType_4}}</text>
+      天心情较差</view>
+    </view>
+    <view class="general-res-item">
+      <image src="/images/flower.png" class="general-res-img"></image>
+      <view class="general-res-info">全年共
+        <text class="general-res-infoNum">{{generalRes.moodType_5}}</text>
+      天心情低迷</view>
+    </view>
+  </view>
+
+  <!-- 详细结果 -->
+  <view class="detailed-res" wx-if="{{!noRecord}}">
+    <view class="detailed-res-item" wx:for="{{monthArr}}" wx:for-item="monthItem" wx:for-index="monthIndex">
+      <view class="detailed-res-month">{{monthItem}}</view>
+      <!-- 某月的每天情况 -->
+      <view class="detailed-res-dateList-container">
+        <view class="detailed-res-dateList mood-{{dateItem.moodType || dateItem.moodType == 0?dateItem.moodType:''}}" wx:for="{{everyday[monthIndex]}}" wx:for-item="dateItem" wx:for-index="dateInd">
+          <text>{{dateItem.dateIndex}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 总结 -->
+  <view class="res-percentage" wx-if="{{!noRecord}}">
+    <view class="per-text">心情百分比</view>
+    <view class="mood-type" wx:for="{{moodPercent}}">
+      <text class="mood-type-color type-{{index}}" decode="true">&nbsp;</text>
+      <view class="mood-type-percent">{{item}}%</view>
+    </view>
+  </view>
+
+  <!-- 导出数据按钮 -->
+  <text class="export-btn" bindtap="exportData">导出全年心情与文字记录</text>
+
+  <!-- 底部 -->
+  <view class="bottom-line">
+    <text>----------</text>
+    <image class="bottom-img" src="/images/flower.png"></image>
+    <text>马上嗨起来</text>
+    <image class="bottom-img" src="/images/flower.png"></image>
+    <text>----------</text>
+  </view>
+</view>

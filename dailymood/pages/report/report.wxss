@@ -1,0 +1,203 @@
+/* pages/report/report.wxss */
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx;
+  padding-bottom: 100rpx;
+  border: 1px dashed orange;
+  background-color: rgba(255, 248, 235, 0.3);
+}
+/* 标题 */
+.title {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 32rpx;
+  color: rgb(255, 166, 0);
+}
+.title-img {
+  width: 120rpx;
+  height: 120rpx;
+  flex-shrink: 0;
+}
+
+/* 年份 */
+.year-picker-container {
+  font-size: 35rpx;
+  color: rgb(255, 224, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arrow-img-container {
+  height: 50rpx;
+  width: 20rpx;
+  padding: 0 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.arrow-img {
+  width: 20rpx;
+}
+.arrow-img-up {
+  transform: rotate(90deg);
+}
+.arrow-img-down {
+  transform: rotate(270deg);
+}
+
+/* 加载中 */
+.loading {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 5rpx;
+}
+.loading-text {
+  font-size: 30rpx;
+  color: rgb(255, 224, 50);
+}
+
+
+/* 概括性结果部分 */
+.general-res {
+  padding: 50rpx 0;
+  border-bottom: 1px dashed rgb(255, 224, 50);
+}
+.general-res-item {
+  font-size: 32rpx;
+  color: grey;
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+}
+.general-res-infoNum {
+  color: rgb(71, 214, 71);
+  font-weight: bold;
+}
+.general-res-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+/* 详细结果部分 */
+.detailed-res {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30rpx 90rpx;
+}
+.detailed-res-item {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.detailed-res-month {
+  font-size: 32rpx;
+  color: orange;
+}
+
+.detailed-res-dateList-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+  color: grey;
+  margin-top: 15rpx;
+}
+.detailed-res-dateList {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  margin: 10rpx 5rpx;
+}
+.detailed-res-dateList.mood-0 {
+  background-color: red;
+}
+.detailed-res-dateList.mood-1 {
+  background-color: lightcoral;
+}
+.detailed-res-dateList.mood-2 {
+  background-color: rgb(255, 230, 184);
+}
+.detailed-res-dateList.mood-3 {
+  background-color: lightblue;
+}
+.detailed-res-dateList.mood-4 {
+  background-color: blue;
+}
+
+/* 总结 */
+.res-percentage {
+  display: flex;
+  width: 500rpx;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px dashed rgb(255, 224, 50);
+  font-size: 32rpx;
+  color: grey;
+  padding-top: 100rpx;
+}
+.per-text {
+  color: orange;
+}
+.mood-type {
+  display: flex;
+  margin: 20rpx 10rpx;
+}
+.mood-type-color {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.mood-type-color.type-0 {
+  background-color: red;
+}
+.mood-type-color.type-1 {
+  background-color: lightcoral;
+}
+.mood-type-color.type-2 {
+  background-color: rgb(255, 230, 184);
+}
+.mood-type-color.type-3 {
+  background-color: lightblue;
+}
+.mood-type-color.type-4 {
+  background-color: blue;
+}
+
+/* 导出 */
+.export-btn {
+  width: 450rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 80rpx;
+  font-size: 35rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: orange;
+  border: 1px solid orange;
+  background-color: lightgoldenrodyellow;
+}
+
+/* 结语 */
+.bottom-line {
+  display: flex;
+  font-size: 26rpx;
+  color: orange;
+  margin-top: 100rpx;
+}
+.bottom-img {
+  width: 32rpx;
+  height: 32rpx;
+}
