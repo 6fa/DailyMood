@@ -151,131 +151,19 @@ Page({
         isLoading: false,
         noRecord: false
       })
+      app.globalData.moodListOfYear = tempEveryDay;
+      app.globalData.year = this.data.thisYear;
       console.log(this.data.everyday);
     })
   },
-  showFailText:function(){
-    wx.hideLoading();
-    wx.showToast({
-      title: '导出失败',
-      duration:1500,
-      icon:'none'
+
+  //查看心情日记
+  toShowMsg:function(){
+    wx.navigateTo({
+      url:"/pages/dairy/dairy"
     })
   },
 
-  //导出数据
-  exportData: async function(){
-    wx.showLoading({
-      title: '请稍后',
-      mask: true
-    })
-
-
-    const fsm = wx.getFileSystemManager();
-    let that = this;
-    let data = '2020年心情记录：\n\n';
-    let moodText = this.data.moodText;
-    let everyday = this.data.everyday;
-    for(let i = 0; i< everyday.length; i++){
-      data += '**********\n\n*'+(i + 1) + '月*\n\n';
-      for(let j = 0; j < everyday[i].length; j++){
-        if (everyday[i][j].moodType || everyday[i][j].moodType == 0){
-          data += (j + 1) + '日：\n' + '心情指数：' + moodText[everyday[i][j].moodType] + '\n';
-          if (everyday[i][j].msg){
-            data += '心情日记：' + everyday[i][j].msg + '\n\n';
-          }
-        }
-      }
-    }
-
-    //首先删除文件以防本地储存满
-    await this.removeFiles().then(async ()=>{
-      //写文件
-      await fsm.writeFile({
-        filePath: wx.env.USER_DATA_PATH + '/tmp.txt',
-        data: data,
-        success: function (res) {
-          //读取文件（要保存后才能读取
-          fsm.saveFile({
-            tempFilePath: wx.env.USER_DATA_PATH + '/tmp.txt',
-            filePath: wx.env.USER_DATA_PATH + '/dailymood_' + that.data.thisYear + '.doc',
-            success: function (res) {
-              //直接在线打开文件
-              wx.openDocument({
-                filePath: res.savedFilePath,
-                success: function () {
-                  wx.hideLoading();
-                  console.log('打开文档成功');
-                },
-                fail: function (err) {
-                  console.log(err);
-                  that.showFailText();
-                },
-              })
-            },
-            fail: function (err) {
-              console.log(err);
-              that.showFailText();
-            }
-          })
-        },
-        fail: function (err) {
-          console.log(err);
-          that.showFailText();
-        }
-      })
-    })
-  },
-  //删除文件
-  // removeFile:async function(){
-  //   return wx.getSavedFileList({
-  //     success(res){
-  //       console.log('delRes',res)
-  //       if(res.fileList.length > 0){
-  //         res.fileList.forEach(val => {
-  //           wx.removeSavedFile({
-  //             filePath: val.filePath,
-  //             success(res){
-  //               console.log('删除成功');
-  //               return new Promise((resolve)=>{
-  //                 resolve()
-  //               })
-  //             }
-  //           })
-  //         })
-  //       }else {
-  //         return new Promise((resolve) => {
-  //           resolve()
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
-  removeFiles:async function(){
-    const fsm = wx.getFileSystemManager();
-    fsm.readdir({
-      dirPath: wx.env.USER_DATA_PATH,
-      success(res){
-        if(res.length > 0){
-          res.files.forEach((val) => {
-            fsm.unlink({
-              filePath: wx.env.USER_DATA_PATH + '/' + val,
-              success() {
-                console.log('删除成功')
-                return new Promise((resolve) => {
-                  resolve()
-                })
-              }
-            })
-          })
-        }else {
-          return new Promise((resolve) => {
-            resolve()
-          })
-        }
-      }
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/home/home",
     "pages/report/report",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/dairy/dairy"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFA296"

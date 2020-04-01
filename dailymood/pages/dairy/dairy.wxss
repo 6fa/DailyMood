@@ -1,0 +1,59 @@
+/* dailymood/pages/dairy/dairy.wxss */
+page {
+  background-color: rgb(255, 255, 242);
+  color: grey;
+  display: flex;
+  font-size: 32rpx;
+  width: 100%;
+}
+.dairy-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+.title {
+  font-size: 38rpx;
+  margin: 20rpx;
+  color: orange;
+}
+
+/* 月份选择 */
+.dairy-month {
+  display: flex;
+  align-items: center;
+}
+.choose-month-left,.choose-month-right{
+  width: 30rpx;
+  height: 30rpx;
+}
+.dairy-month-text {
+  padding: 0 30rpx;
+}
+.choose-month-right{
+  transform: rotate(180deg)
+}
+
+/* 日记 */
+.dairy-list {
+  align-self: flex-start;
+  width: 100%;
+}
+.dairy-list-item {
+  padding: 50rpx 0;
+  width: 100%;
+  border-bottom: 1px dashed orange;
+}
+.dairy-item-time {
+  margin: 10rpx 0;
+}
+.dairy-item-mood,.dairy-item-msg{
+  width: 100%;
+  padding: 10rpx;
+  box-sizing: border-box;
+  word-break:break-all;
+}
+

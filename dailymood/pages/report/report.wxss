@@ -1,5 +1,8 @@
 /* pages/report/report.wxss */
-
+page {
+  width: 100%;
+  height: 100%;
+}
 .report-container {
   display: flex;
   flex-direction: column;
@@ -176,18 +179,28 @@
   background-color: blue;
 }
 
-/* 导出 */
-.export-btn {
-  width: 450rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  margin-top: 80rpx;
+/* 查看日记 */
+.show-msg-container {
   font-size: 35rpx;
-  border-radius: 10rpx;
-  text-align: center;
-  color: orange;
-  border: 1px solid orange;
-  background-color: lightgoldenrodyellow;
+  color:orange;
+  width: 100%;
+  margin: 80rpx;
+  display: flex;
+  justify-content: center;
+}
+.show-msg {
+  border-top: 1px dashed orange;
+  width: 500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80rpx;
+}
+.show-msg-img {
+  width: 35rpx;
+  height: 35rpx;
+  transform: rotate(180deg);
+  margin-left: 20rpx;
 }
 
 /* 结语 */

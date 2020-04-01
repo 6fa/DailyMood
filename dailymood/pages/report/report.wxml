@@ -102,8 +102,13 @@
     </view>
   </view>
 
-  <!-- 导出数据按钮 -->
-  <text class="export-btn" bindtap="exportData">导出全年心情与文字记录</text>
+  <!-- 查看心情日记 -->
+  <view class="show-msg-container">
+    <view class="show-msg" bindtap="toShowMsg">
+      <text class="show-msg-text">去看看全年的心情日记</text>
+      <image class="show-msg-img" src="/images/arrow.png"></image>
+    </view>
+  </view>
 
   <!-- 底部 -->
   <view class="bottom-line">
@@ -114,3 +119,4 @@
     <text>----------</text>
   </view>
 </view>
+

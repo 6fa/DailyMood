@@ -1,0 +1,26 @@
+<!--dailymood/pages/dairy/dairy.wxml-->
+<view class="dairy-container">
+
+  <view class="title">------{{year}}------</view>
+
+  <view class="dairy-month">
+    <image class="choose-month-left" src="/images/arrow.png" bindtap="monthPrev"></image>
+    <text class="dairy-month-text">{{monthIndex+1}}月</text>
+    <image class="choose-month-right" src="/images/arrow.png" bindtap="monthNext"></image>
+  </view>
+
+  <view class="dairy-list">
+    <view class="dairy-list-item" wx:for="{{moodList[monthIndex]}}" wx:for-item="moodItem" wx-if="{{moodItem.moodText}}">
+      <view class="dairy-item-time">
+        <text>{{moodItem.monthIndex+1}}</text>
+        <text>月</text>
+        <text>{{moodItem.dateIndex}}</text>
+        <text>日</text>
+      </view>
+      <view class="dairy-item-mood" wx-if="{{moodItem.moodText}}">{{moodItem.moodText}}</view>
+      <view class="dairy-item-msg" wx-if="{{moodItem.msg}}">
+        {{moodItem.msg}}
+      </view>
+    </view>
+  </view>
+</view>
