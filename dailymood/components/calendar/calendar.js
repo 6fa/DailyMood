@@ -62,7 +62,16 @@ Component({
     //点击日期时
     toEdit:function(e){
       let moodDetail = e.currentTarget.dataset.moodinfo;
-      console.log('e.currentTarget.dataset', e.currentTarget.dataset);
+      let time = new Date(moodDetail.time);
+      if(time > new Date()){
+        wx.showToast({
+          title: '不能写未来日记哦',
+          icon:'none',
+          duration:1500
+        })
+        return;
+      }
+
       let url = '/pages/edit/edit?moodDetail=' + JSON.stringify(moodDetail);
 
       wx.navigateTo({
