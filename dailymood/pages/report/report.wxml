@@ -103,7 +103,7 @@
   </view>
 
   <!-- 查看心情日记 -->
-  <view class="show-msg-container">
+  <view class="show-msg-container" wx-if="{{everyday.length}}">
     <view class="show-msg" bindtap="toShowMsg">
       <text class="show-msg-text">去看看全年的心情日记</text>
       <image class="show-msg-img" src="/images/arrow.png"></image>

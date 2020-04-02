@@ -11,7 +11,7 @@ Page({
       nowMonth: new Date().getMonth(),
       nowDate: new Date().getDate()
     },
-    months:[1,2,3,4,5,6,7,8,9,10,11,12],
+    months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     years:[],
     value:[],
     showTimePicker:false, //是否显示日期选择器
@@ -38,8 +38,12 @@ Page({
     let newYear = this.data.time.nowYear;
     let newMonth = this.data.time.nowMonth + 1;
     if (newMonth > 11) {
-      newMonth = 0;
       newYear++;
+      if (newYear > new Date().getFullYear()){
+        return;
+      }else {
+        newMonth = 0;
+      }
     }
     let newTime = {
       nowYear: newYear,
@@ -53,7 +57,7 @@ Page({
   //选择日期
   chooseDate() {
     let date = new Date(), tempYears = [];
-    for (let i = 2000; i <= date.getFullYear()+10; i++) {
+    for (let i = 2000; i <= date.getFullYear(); i++) {
       tempYears.push(i);
     }
     this.setData({
@@ -65,11 +69,13 @@ Page({
   //确认选择日期
   bindChanges(e) {
     let val = e.detail.value;
-    console.log(this.data.months[val[1] - 1]);
+    let choosedYear = this.data.years[val[0]];
+
+    let choosedMonth = this.data.months[val[1] - 1];
     this.setData({
       time: {
-        nowYear: this.data.years[val[0]],
-        nowMonth: this.data.months[val[1]-1] || 0,
+        nowYear: choosedYear,
+        nowMonth: choosedMonth || 0,
         nowDate: this.data.time.nowDate
       }
     })
@@ -84,7 +90,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //将日期设置回今日
+    this.setData({
+      time: {
+        nowYear: new Date().getFullYear(),
+        nowMonth: new Date().getMonth(),
+        nowDate: new Date().getDate()
+      }
+    })
   },
 
   /**

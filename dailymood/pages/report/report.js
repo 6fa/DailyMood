@@ -19,7 +19,7 @@ Page({
     detailRes:[],//全年12个月的具体心情记录
     noRecord:false, //这一年没有心情记录
 
-    everyday:[], //每天的情况（包括无记录天、留言），作为导出数据
+    everyday:[], //每天的情况（包括无记录天、留言）
     isLoading: false, //是否正在加载数据，用于加载数据时的 loading 效果
 
   },
@@ -51,7 +51,8 @@ Page({
       if (res.result.data.length == 0){
         this.setData({
           noRecord: true,
-          isLoading: false
+          isLoading: false,
+          everyday:[]
         })
         return;
       }
