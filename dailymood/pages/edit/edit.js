@@ -56,7 +56,7 @@ Page({
         message: this.data.inputVal
       }
     }).then(res => {
-      console.log('提交心情成功',res);
+      console.log('提交心情成功',res); 
     })
     //提交后弹出提示框
     wx.showToast({

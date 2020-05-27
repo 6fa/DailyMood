@@ -15,7 +15,7 @@ Page({
     let month = this.data.monthIndex - 1;
 
     if (month < 0) {
-      month = 0;
+      month = 11;
     }
     this.setData({
       monthIndex:month
@@ -24,7 +24,7 @@ Page({
   monthNext: function () {
     let month = this.data.monthIndex + 1;
     if(month > 11){
-      month = 11;
+      month = 0;
     }
     this.setData({
       monthIndex:month

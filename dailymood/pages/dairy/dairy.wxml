@@ -4,9 +4,9 @@
   <view class="title">------{{year}}------</view>
 
   <view class="dairy-month">
-    <image class="choose-month-left" src="/images/arrow.png" bindtap="monthPrev"></image>
+    <image class="choose-month-left" src="/assets/images/arrow.png" bindtap="monthPrev"></image>
     <text class="dairy-month-text">{{monthIndex+1}}月</text>
-    <image class="choose-month-right" src="/images/arrow.png" bindtap="monthNext"></image>
+    <image class="choose-month-right" src="/assets/images/arrow.png" bindtap="monthNext"></image>
   </view>
 
   <view class="dairy-list">

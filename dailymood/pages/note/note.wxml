@@ -1,0 +1,74 @@
+<!--pages/note/note.wxml-->
+<view class="note-page">
+  <!-- 好心情记录 -->
+  <view class="note-happy-wrapper">
+    <view class="note-head">
+      <view class="note-img">
+        <image src="/assets/images/fruit.png"></image>
+      </view>
+      <view class="note-text">
+        尽可能多地写下使你开心的事情，多看看可以使快乐加倍哦
+      </view>
+      <view class="note-add" bindtap="addHappyNote">+</view>
+    </view>
+    
+    <view class="note-list" bindtap="delNote">
+      <view class="note-item" wx:for="{{happyList}}">
+        <text class="note-item-index">{{happyList.length - index}}</text>
+        <text class="note-item-content">{{item.content}}</text>
+        <text class="note-item-del" data-name="delete" data-type="happy" data-info="{{item}}">Delete</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 坏心情记录 -->
+  <view class="note-sad-wrapper" id="sad">
+    <view class="note-head">
+      <view class="note-img">
+        <image src="/assets/images/fruit.png"></image>
+      </view>
+      <view class="note-text">
+        写下现在烦恼的/令你不开心的事情，过一段时间再看看，以前的烦恼还在吗？
+      </view>
+      <view class="note-add" bindtap="addSadNote">+</view>
+    </view>
+    
+    <view class="note-list" bindtap="delNote">
+      <view class="note-item" wx:for="{{sadList}}">
+        <text class="note-item-index">{{sadList.length - index}}</text>
+        <text class="note-item-content">{{item.content}}</text>
+        <text class="note-item-del" data-name="delete" data-type="sad" data-info="{{item}}">Delete</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 跳转按钮 -->
+  <view class="jump-wrapper {{showJumpBox === false ? 'hidden' : ''}}">
+    <view class="jump-happy" bindtap="toHappy">
+      <image src="/assets/images/happy.png"></image>
+    </view>
+
+    <view class="jump-sad" bindtap="toSad">
+      <image src="/assets/images/sad.png"></image>
+    </view>
+  </view>
+
+  <!-- 填写区域 -->
+  <view class="write-layer {{showWriteLayer === false ? 'hidden' : ''}}">
+    <form class="write-box" bindsubmit="writeDone">
+      <textarea placeholder="200字内" class="write-input" name="textarea" value="{{inputVal}}"></textarea>
+      <view class="write-ctrl">
+        <button class="write-cancel" bindtap="writeCancel">取消</button>
+        <button class="write-done" form-type="submit">完成</button>
+      </view>
+    </form>
+  </view>
+
+</view>
+
+<!-- 删除sad类型便签时跳出的 -->
+<delsad 
+  bindclosetips="closetips" 
+  class="del-tips {{showDelTips === false ? 'hidden' : ''}}"
+>
+</delsad>

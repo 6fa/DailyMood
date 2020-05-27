@@ -4,10 +4,22 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wxeac0ee7b57e99fde",
 	"projectname": "DailyMood",
@@ -63,6 +75,13 @@
 					"id": -1,
 					"name": "pages/dairy/dairy",
 					"pathName": "pages/dairy/dairy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/note/note",
+					"pathName": "pages/note/note",
 					"query": "",
 					"scene": null
 				}

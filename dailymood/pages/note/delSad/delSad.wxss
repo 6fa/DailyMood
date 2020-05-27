@@ -1,0 +1,54 @@
+/* pages/note/delSad/delSad.wxss */
+.del-sad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  padding-top: 100rpx;
+}
+.del-pics {
+  width: 400rpx;
+  height: 400rpx;
+  position: relative;
+}
+.img1, .img2, .img3 {
+  width: 400rpx;
+  height: 400rpx;
+  transition: all .3s;
+  opacity: 1;
+  position: absolute;
+}
+.img1.hidden, .img2.hidden, .img3.hidden {
+  opacity: 0;
+}
+
+.del-text {
+  width: 90%;
+  box-sizing: border-box;
+  padding: 30rpx 10rpx;
+  border: 2rpx solid rgb(107, 94, 94);
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.del-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.del-btn-next,
+.del-btn-cancel {
+  padding: 15rpx;
+  background-color: rgb(255, 221, 190);
+  border-radius: 10rpx;
+  border: 1rpx solid lightgrey;
+  color: rgb(96, 96, 96);
+}
+.del-btn-next {
+  margin-left: 50rpx;
+}

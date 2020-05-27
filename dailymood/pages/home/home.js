@@ -38,6 +38,11 @@ Page({
     let newYear = this.data.time.nowYear;
     let newMonth = this.data.time.nowMonth + 1;
     if (newYear == new Date().getFullYear() && newMonth > new Date().getMonth()){
+      wx.showToast({
+        title: '不能写未来日记哦',
+        icon:'none',
+        duration:1500
+      })
       return;
     }
     if (newMonth > 11) {
@@ -102,6 +107,16 @@ Page({
   toConfirm() {
     this.setData({
       showTimePicker: false
+    })
+  },
+  // 跳转到另一小程序
+  toHelpline() {
+    wx.navigateToMiniProgram({
+      appId: "wxbebb3cdd9b331046",
+      path: "doctor/pages/psychological/psychological?id=79&title=全国心理援助热线查询&footer=地方热线数据来自健康中国政务新媒体平台/n高校热线数据来自中国大学生在线网站",
+      success: function(res){
+        console.log(res)
+      }
     })
   },
 

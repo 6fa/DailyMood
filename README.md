@@ -1,12 +1,28 @@
-# 云开发 quickstart
+# 一个简单的记录心情小程序
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+## 介绍
+  这是一个简单的用于记录心情的小程序，使用了云开发的数据库和云函数。
+  主要功能：
+    - 可记录每天的心情好坏程度
+    - 可写简短的心情日记
+    - 查看全年的心情总结
+    - 心情小便签
 
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
-
-## 参考文档
-
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+## 目录结构
+  - assets: 字体及图片
+  - components: 日历组件
+  - pages: 页面
+    - dairy: 全年的心情日记
+    - edit: 心情记录编辑页面
+    - home: 首页
+    - index： 进入页面
+    - note: 心情便签页面
+    - report： 心情报告页面
+  - app.js/app.wxss/app.json/project.config.json: 配置
+  - mycloudfunc: 云函数
+    - addNote: 增加一条心情便签
+    - delNote: 删除一条心情便签
+    - editMood: 心情编辑（存在则修改，不存在则增加）
+    - getMoodList: 取得心情列表
+    - getNotes: 取得便签列表
 

@@ -63,7 +63,7 @@ Component({
     toEdit:function(e){
       let moodDetail = e.currentTarget.dataset.moodinfo;
       let time = new Date(moodDetail.time);
-      if(time > new Date()){
+      if(time.getDate() - 1 > new Date().getDate()){
         wx.showToast({
           title: '不能写未来日记哦',
           icon:'none',

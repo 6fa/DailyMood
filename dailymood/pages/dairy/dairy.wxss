@@ -29,9 +29,10 @@ page {
 .choose-month-left,.choose-month-right{
   width: 30rpx;
   height: 30rpx;
+  padding: 20rpx;
 }
 .dairy-month-text {
-  padding: 0 30rpx;
+  padding: 0 200rpx;
 }
 .choose-month-right{
   transform: rotate(180deg)

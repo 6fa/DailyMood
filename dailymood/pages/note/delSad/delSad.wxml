@@ -1,0 +1,18 @@
+<!--pages/note/delSad/delSad.wxml-->
+<view class="del-sad">
+  <!-- 图片区域 -->
+  <view class="del-pics">
+    <image src="/assets/images/del1.png" class="img1 {{img1 === false ? 'hidden' : ''}}"></image>
+    <image src="/assets/images/del2.png" class="img2 {{img2 === false ? 'hidden' : ''}}"></image>
+    <image src="/assets/images/del3.png" class="img3 {{img3 === false ? 'hidden' : ''}}"></image>
+  </view>
+  <!-- 文字区域 -->
+  <view class="del-text">
+    <text>{{currentText}}</text>
+  </view>
+  <!-- 按钮区域 -->
+  <view class="del-btn">
+    <view class="del-btn-cancel" bindtap="toClose">闭嘴，给我直接删</view>
+    <view class="del-btn-next" bindtap="toNext">{{nextText}}</view>
+  </view>
+</view>

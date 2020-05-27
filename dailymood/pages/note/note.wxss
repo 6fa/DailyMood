@@ -1,0 +1,198 @@
+/* pages/note/note.wxss */
+page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.note-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 100rpx;
+  /* background-color: rgba(255, 252, 250, 0.789); */
+  background-color: #fff;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.note-happy-wrapper,
+.note-sad-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+}
+.note-head {
+  width: 100%;
+  padding: 30rpx 20rpx 100rpx;
+  box-sizing: border-box;
+  color:grey;
+  box-sizing: border-box;
+  border: 1px dashed orange;
+  background-color: rgba(255, 248, 235, 0.3);
+  position: relative;
+}
+.note-img {
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 15rpx;
+  display: flex;
+  justify-content: center;
+}
+.note-img image {
+  width: 50rpx;
+  height: 100%;
+}
+.note-add {
+  width: 100rpx;
+  height: 50rpx;
+  /* background-color:  rgb(255, 244, 244); */
+  background-color: rgb(255, 255, 185);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+  font-size: 40rpx;
+  border-radius: 10rpx;
+  color: orange;
+}
+
+.note-list {
+  width: 100%;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+  color: grey;
+}
+.note-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 20rpx;
+  position: relative;
+  border-bottom: 1rpx dashed orange;
+}
+.note-item-index {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  line-height: 40rpx;
+  text-align: center;
+  margin-right: 30rpx;
+  font-size: 30rpx;
+  color: orange;
+  border: 1rpx solid orange;
+}
+.note-item-content {
+  font-size: 34rpx;
+  width: 100%;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+.note-item-del {
+  width: 100rpx;
+  position:absolute;
+  right: 20rpx;
+  bottom: 0rpx;
+  text-align: center;
+  display: block;
+  font-size: 30rpx;
+  color: orange;
+}
+
+
+.jump-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: all .5s;
+}
+.jump-wrapper.hidden {
+  opacity: 0;
+}
+.jump-happy,
+.jump-sad {
+  width: 100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  background-color: rgba(255, 248, 235, .4);
+  border-radius: 50%;
+}
+.jump-sad {
+  margin-top: 20rpx;
+}
+.jump-happy image,
+.jump-sad image {
+  width: 100%;
+  height: 100%;
+}
+
+.write-layer {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0,0,0,.3);
+  z-index: 9;
+  transition: all .5s;
+}
+.write-layer.hidden {
+  transform: translate(100%,0);
+}
+.write-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 500rpx;
+  width: 600rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx 0 20rpx;
+}
+.write-input {
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  border: 1rpx dashed orange;
+}
+.write-ctrl {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+}
+.write-cancel,
+.write-done {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: orange;
+  background-color: #fff;
+}
+.write-cancel::after,
+.write-done::after {
+  border: none;
+}
+
+
+.del-tips {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 10;
+  transition: all .5s;
+  opacity: 1;
+}
+.del-tips.hidden {
+  transform: scale(0);
+  opacity: 0;
+}

@@ -4,7 +4,8 @@
     "pages/home/home",
     "pages/report/report",
     "pages/edit/edit",
-    "pages/dairy/dairy"
+    "pages/dairy/dairy",
+    "pages/note/note"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFA296"
@@ -15,14 +16,20 @@
       {
         "pagePath": "pages/home/home",
         "text": "Home",
-        "iconPath": "images/cloud.png",
-        "selectedIconPath": "images/sun.png"
+        "iconPath": "assets/images/cloud.png",
+        "selectedIconPath": "assets/images/sun.png"
       },
       {
         "pagePath": "pages/report/report",
         "text": "Report",
-        "iconPath": "images/cloud.png",
-        "selectedIconPath": "images/sun.png"
+        "iconPath": "assets/images/cloud.png",
+        "selectedIconPath": "assets/images/sun.png"
+      },
+      {
+        "pagePath": "pages/note/note",
+        "text": "Note",
+        "iconPath": "assets/images/cloud.png",
+        "selectedIconPath": "assets/images/sun.png"
       }
     ]
   },

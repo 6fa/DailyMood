@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "delsad": "./delSad/delSad"
+  },
+  "navigationBarTitleText": "心情小便签"
+}

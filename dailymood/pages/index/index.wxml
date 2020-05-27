@@ -1,6 +1,6 @@
 <!--dailymood/pages/index/index.wxml-->
 <view class="container">
-  <image src="/images/bg.png" class="bg-img"></image>
+  <image src="/assets/images/bg.png" class="bg-img"></image>
   <view class="btn-container">
     <button class="btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">开始记录</button>
   </view>

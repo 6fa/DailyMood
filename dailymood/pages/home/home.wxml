@@ -3,20 +3,20 @@
 <view class="container">
   <!-- 标题 -->
   <view class="title">
-    <image src="/images/rainbow.png" class="title-img"></image>
+    <image src="/assets/images/rainbow.png" class="title-img"></image>
     <text class="title-text">Daily Mood</text>
     <text class="title-subtext">--点击日期开始记录--</text>
   </view>
 
   <!-- 今日日期显示/日期切换 -->
   <view class="switchDate">
-    <image class="prev" src="/images/arrow.png" bindtap="toPrevMonth"></image>
+    <image class="prev" src="/assets/images/arrow.png" bindtap="toPrevMonth"></image>
     <!-- 日期点击可以具体选择日期 -->
     <view class="today" bindtap="chooseDate">
       <text class="today-year">{{time.nowYear}}</text>
       <text class="today-month">{{time.nowMonth+1}}</text>
     </view>
-    <image class="next" src="/images/arrow.png" bindtap="toNextMonth"></image>
+    <image class="next" src="/assets/images/arrow.png" bindtap="toNextMonth"></image>
   </view>
 
   <!-- 日期选择盒 -->
@@ -42,4 +42,15 @@
 
   <!-- 日历主体 -->
   <calendar year="{{time.nowYear}}" month="{{time.nowMonth}}" date="{{time.nowDate}}"></calendar>
+
+  <!-- 跳转到其他小程序的心理援助热线 -->
+  <view class="helpline-wrapper" bindtap="toHelpline">
+    <view class="helpline-img">
+      <image src="/assets/images/sun.png" class="img"></image>
+    </view>
+    <view class="helpline-text">全国心理援助热线查询</view>
+    <view class="helpline-img">
+      <image src="/assets/images/arrow2.png" class="img2"></image>
+    </view>
+  </view>
 </view>

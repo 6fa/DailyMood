@@ -1,5 +1,5 @@
 /* pages/edit/edit.wxss */
-@import "/iconfont/iconfont.wxss";
+@import "/assets/iconfont/iconfont.wxss";
 
 .edit-container {
   display: flex;

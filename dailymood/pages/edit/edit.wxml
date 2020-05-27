@@ -1,12 +1,12 @@
 <!--pages/edit/edit.wxml-->
 <view class="edit-container">
   <view class="image-container">
-    <image class="image-item" src="/images/rainbow.png"></image>
-    <image class="image-item" src="/images/sun.png"></image>
-    <image class="image-item" src="/images/sun.png"></image>
-    <image class="image-item" src="/images/sun.png"></image>
-    <image class="image-item" src="/images/sun.png"></image>
-    <image class="image-item" src="/images/rainbow.png"></image>
+    <image class="image-item" src="/assets/images/rainbow.png"></image>
+    <image class="image-item" src="/assets/images/sun.png"></image>
+    <image class="image-item" src="/assets/images/sun.png"></image>
+    <image class="image-item" src="/assets/images/sun.png"></image>
+    <image class="image-item" src="/assets/images/sun.png"></image>
+    <image class="image-item" src="/assets/images/rainbow.png"></image>
   </view>
 
   <text class="title">点击选择今日心情</text>

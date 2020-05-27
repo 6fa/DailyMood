@@ -83,3 +83,31 @@
   border-radius: 20rpx;
   color: rgb(255, 166, 0);
 }
+
+
+/* 热线电话查询 */
+.helpline-wrapper {
+  margin: 100rpx 60rpx;
+  display: flex;
+  align-items: center;
+  color: grey;
+  font-size: 30rpx;
+  justify-content: center;
+  border-bottom: 1rpx dashed lightgrey;
+}
+
+.helpline-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+}
+.helpline-img .img {
+  width: 100%;
+  height: 100%;
+}
+.helpline-img .img2 {
+  width: 70%;
+  height: 70%;
+  transform: translate(0,25%);
+}
