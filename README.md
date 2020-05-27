@@ -26,3 +26,16 @@
     - getMoodList: 取得心情列表
     - getNotes: 取得便签列表
 
+
+## 部分页面截图
+  ### 首页
+  ![首页截图](/dailymood/assets/screenshot/home.png)
+
+  ### 编辑
+  ![编辑截图](/dailymood/assets/screenshot/edit.png)
+
+  ### 报告
+  ![报告截图](/dailymood/assets/screenshot/report.png)
+
+  ### 便签
+  ![便签截图](/dailymood/assets/screenshot/note.png)
