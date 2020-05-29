@@ -43,7 +43,6 @@ exports.main = async (event, context) => {
   return await Promise.all(task).then(res => {
 
     if (!res[0]) {
-      console.log('1233333333333333333')
       return {
         state: true,
         data: []

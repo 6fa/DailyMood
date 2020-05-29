@@ -29,13 +29,13 @@
 
 ## 部分页面截图
   ### 首页
-![首页截图](https://github.com/6fa/DailyMood/raw/master/screenshot/home.png)
+![首页截图](/dailymood/assets/screenshot/home.png)
 
   ### 编辑
-![编辑截图](https://github.com/6fa/DailyMood/raw/master/screenshot/edit.png)
+![编辑截图](/dailymood/assets/screenshot/edit.png)
 
   ### 报告
-![报告截图](https://github.com/6fa/DailyMood/raw/master/screenshot/report.png)
+![报告截图](/dailymood/assets/screenshot/report.png)
 
   ### 便签
-![便签截图](https://github.com/6fa/DailyMood/raw/master/screenshot/note.png)
+![便签截图](/dailymood/assets/screenshot/note.png)
