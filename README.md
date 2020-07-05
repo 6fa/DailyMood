@@ -9,8 +9,9 @@
   - 心情小便签
 
 ## 目录结构
-  - assets: 字体及图片
-  - components: 日历组件
+  - assets: 存放字体及图片
+  - components：组件
+    - calendar：日历组件
   - pages: 页面
     - dairy: 全年的心情日记
     - edit: 心情记录编辑页面
@@ -39,3 +40,24 @@
 
   ### 便签
 ![便签截图](/dailymood/assets/screenshot/note.png)
+
+
+
+## 安装使用
+  ### 下载源码
+  clone项目到本地，或者点击Download Zip下载到本地后解压
+
+  ### 创建项目
+  使用微信开发者工具新建项目， 目录指向下载好的源码，填入自己的AppID，并且勾选后端服务为 小程序·云开发。
+  新建项目后，点击“云开发”按钮，开通云开发、创建新的环境。
+
+  ### 添加集合
+  点击“数据库”按钮，添加如下集合：happyNotes，mood，sadNotes
+
+  ### 部署云函数
+  关闭云开发控制台，回到微信开发者工具界面，将项目目录中mycloudfunc文件夹的环境指向刚才新建的环境。
+  将mycloudfunc中所有云函数右键点击“上传并部署”。
+
+  ### 配置修改
+  dailymood目录下，进入app.js，将wx.cloud.init函数中的env指定为你自己的环境。
+  点击菜单栏中的编译即可查看效果。
